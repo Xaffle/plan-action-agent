@@ -12,9 +12,9 @@ if API_PROVIDER == "qwen":
     API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
     API_MODEL = "qwen3-30b-a3b"
 elif API_PROVIDER == "deepseek":
-    API_KEY = os.getenv("ALT_API_KEY")
-    API_URL = "https://alt-llm.example.com/api/v1"
-    API_MODEL = "alt-model-1"
+    API_KEY = os.getenv("DS_API_KEY")
+    API_URL = os.getenv("DS_API_URL")
+    API_MODEL = "DeepSeek-V3"
 else:
     raise ValueError(f"Unknown API_PROVIDER: {API_PROVIDER}")
 
