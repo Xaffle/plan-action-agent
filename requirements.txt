@@ -1,0 +1,14 @@
+# LangChain Core - 核心组件，包含消息、提示、可运行对象等
+langchain-core>=0.1.0
+
+# LangChain Community - 社区贡献的组件，包含ChatOpenAI等集成
+langchain-community>=0.0.10
+
+# LangGraph - 状态图工作流管理
+langgraph>=0.0.20
+
+# OpenAI - 用于API调用
+openai>=1.0.0
+
+# 可选：如果需要更好的类型提示支持
+typing-extensions>=4.0.0

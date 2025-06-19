@@ -12,17 +12,12 @@
 - 通义千问: 底层大语言模型
 """
 
-import os
-from typing import Annotated, Sequence, TypeVar, Any, TypedDict
+from typing import Any, TypedDict
 from langchain_core.messages import BaseMessage, HumanMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_core.runnables import Runnable, RunnableLambda
-from langchain_core.output_parsers import StrOutputParser
 from langchain_community.chat_models import ChatOpenAI
-from operator import itemgetter
-from langchain_core.runnables import RunnablePassthrough
 from langgraph.graph import END, StateGraph
-import operator
+from api_setting import API_KEY, API_URL, API_MODEL
 
 # ==================== 状态定义 ====================
 class AgentState(TypedDict):
@@ -183,18 +178,18 @@ def create_agent():
     # ==================== 模型初始化 ====================
     # 规划器使用低温度，确保输出稳定
     planner_llm = ChatOpenAI(
-        model="qwen-plus-2025-01-25",
+        model=API_MODEL,
         temperature=0,  # 低温度确保规划的一致性
-        api_key=os.environ.get("DASHSCOPE_API_KEY"),
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
+        api_key=API_KEY,
+        base_url=API_URL
     )
     
     # 执行器使用中等温度，保持一定创造性
     executor_llm = ChatOpenAI(
-        model="qwen-plus-2025-01-25",
+        model=API_MODEL,
         temperature=0.5,  # 中等温度保持执行的灵活性
-        api_key=os.environ.get("DASHSCOPE_API_KEY"),
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"
+        api_key=API_KEY,
+        base_url=API_URL
     )
     
     # 创建功能组件

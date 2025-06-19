@@ -5,16 +5,16 @@
 import os
 
 
-API_PROVIDER = "qwen" # 可设置为 'qwen' 或 'deepseek'
+API_PROVIDER = "deepseek" # 可设置为 'qwen' 或 'deepseek'
 
 if API_PROVIDER == "qwen":
     API_KEY = os.getenv("DASHSCOPE_API_KEY")
     API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-    API_MODEL = "qwen3-30b-a3b"
+    API_MODEL = "qwen3-30b-a3b" # "qwen-plus-2025-01-25"
 elif API_PROVIDER == "deepseek":
     API_KEY = os.getenv("DS_API_KEY")
-    API_URL = os.getenv("DS_API_URL")
-    API_MODEL = "DeepSeek-V3"
+    API_URL = os.getenv("DS_BASE_URL")
+    API_MODEL = "DeepSeek-V3-0324"
 else:
     raise ValueError(f"Unknown API_PROVIDER: {API_PROVIDER}")
 

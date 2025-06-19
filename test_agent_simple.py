@@ -15,12 +15,7 @@
 
 import os
 from agents import run_agent
-
-# ==================== 环境检查 ====================
-if not os.environ.get("DASHSCOPE_API_KEY"):
-    print("❌ 错误：请设置 DASHSCOPE_API_KEY 环境变量")
-    print("💡 提示：export DASHSCOPE_API_KEY='your-api-key'")
-    exit(1)
+from api_setting import API_KEY
 
 # ==================== 测试任务定义 ====================
 # 选择一个适中复杂度的任务来测试智能体能力
