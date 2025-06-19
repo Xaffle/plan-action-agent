@@ -1,6 +1,42 @@
 # Demo Agent with plan and action
 
-## 🎯 系统概述
+## 🆕 增强版智能体 (Enhanced Agent)
+
+**新功能**: 我们新增了一个更智能的版本 - `enhanced_agents.py`，具有以下突破性特性：
+
+### 🧠 核心增强特性
+
+1. **LLM驱动的控制流**: 每一步的决策都由LLM做出，而不是固定的代码逻辑
+2. **自我反思机制**: 智能体能够评估自己的执行结果并调整策略
+3. **LangChain工具架构**: 基于工具系统的模块化设计，易于扩展
+4. **动态计划调整**: 根据执行结果实时修正计划
+
+### 🚀 快速开始增强版
+
+```python
+from enhanced_agents import run_enhanced_agent
+
+# 运行增强智能体
+result = run_enhanced_agent(
+    objective="制定一个学习Python数据分析的计划并开始执行",
+    max_iterations=15
+)
+
+print(f"完成任务: {len(result['completed_tasks'])}")
+print(f"反思次数: {len(result['reflections'])}")
+print(f"最终信心: {result['final_confidence']:.2f}")
+```
+
+### 📁 文件说明
+
+- `enhanced_agents.py` - 🆕 增强版智能体主文件
+- `test_enhanced_agent.py` - 🆕 增强版测试文件  
+- `example_enhanced.py` - 🆕 增强版使用示例
+- `agents.py` - 原版智能体（教学版本）
+
+---
+
+## 🎯 原版系统概述
 
 这是一个具有**分层规划**和**低层执行**能力的智能体系统，能够将复杂目标分解为可执行的任务序列，并逐步完成。系统基于 LangGraph 构建，实现了状态管理和工作流控制。
 
@@ -127,21 +163,7 @@ export API_PROVIDER="qwen"  # 默认值，可选 "qwen" 或 "deepseek"
 ```
 
 ### 2. API配置
-系统支持多个API提供商，通过 `api_setting.py` 统一管理：
-
-```python
-# api_setting.py 中的配置
-API_PROVIDER = "qwen"  # 或 "deepseek"
-
-if API_PROVIDER == "qwen":
-    API_KEY = os.getenv("DASHSCOPE_API_KEY")
-    API_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
-    API_MODEL = "qwen3-30b-a3b"
-elif API_PROVIDER == "deepseek":
-    API_KEY = os.getenv("ALT_API_KEY")
-    API_URL = "https://alt-llm.example.com/api/v1"
-    API_MODEL = "alt-model-1"
-```
+系统支持多个API提供商，通过 `api_setting.py` 统一管理。
 
 ### 3. 运行智能体
 ```python

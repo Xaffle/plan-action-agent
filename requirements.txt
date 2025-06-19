@@ -1,14 +1,17 @@
-# LangChain Core - 核心组件，包含消息、提示、可运行对象等
+# LangChain Core - 提供BaseMessage, HumanMessage, ChatPromptTemplate, MessagesPlaceholder
 langchain-core>=0.1.0
 
-# LangChain Community - 社区贡献的组件，包含ChatOpenAI等集成
+# LangChain Community - 提供ChatOpenAI集成，支持兼容OpenAI API的服务
 langchain-community>=0.0.10
 
-# LangGraph - 状态图工作流管理
+# LangChain - 主包，提供Agent框架和工具系统
+langchain>=0.1.0
+
+# LangGraph - 状态图工作流管理，提供StateGraph和END
 langgraph>=0.0.20
 
-# OpenAI - 用于API调用
+# OpenAI - API客户端，langchain-community的ChatOpenAI依赖此库
 openai>=1.0.0
 
-# 可选：如果需要更好的类型提示支持
+# 类型提示支持 - 为Python 3.8+提供更好的类型注解支持
 typing-extensions>=4.0.0
