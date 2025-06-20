@@ -14,7 +14,7 @@
 ### 🚀 快速开始增强版
 
 ```python
-from enhanced_agents import run_enhanced_agent
+from agent.enhanced_agents import run_enhanced_agent
 
 # 运行增强智能体
 result = run_enhanced_agent(
@@ -168,7 +168,7 @@ export API_PROVIDER="qwen"  # 默认值，可选 "qwen" 或 "deepseek"
 ### 3. 运行智能体
 ```python
 # 基本用法
-from agents import run_agent
+from agent.agents import run_agent
 
 objective = """请帮我规划并执行一个新产品发布的社交媒体营销计划。要求：
 1. 目标人群是25-35岁的年轻专业人士

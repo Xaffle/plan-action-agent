@@ -1,5 +1,10 @@
+import sys
+import os
+# 添加项目根目录到Python路径
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 from openai import OpenAI
-from api_setting import API_KEY, API_URL, API_MODEL
+from agent.api_setting import API_KEY, API_URL, API_MODEL
 
 client = OpenAI(
     api_key=API_KEY,

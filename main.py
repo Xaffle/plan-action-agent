@@ -1,5 +1,5 @@
 import os
-from agents import run_agent
+from agent.agents import run_agent
 
 # 确保已设置 DASHSCOPE_API_KEY 环境变量
 if not os.environ.get("DASHSCOPE_API_KEY"):

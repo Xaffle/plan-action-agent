@@ -17,7 +17,7 @@ from langchain_core.messages import BaseMessage, HumanMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.chat_models import ChatOpenAI
 from langgraph.graph import END, StateGraph
-from api_setting import API_KEY, API_URL, API_MODEL
+from .api_setting import API_KEY, API_URL, API_MODEL
 
 # ==================== 状态定义 ====================
 class AgentState(TypedDict):

@@ -1,5 +1,5 @@
 """
-增强智能体系统 - 具有自主决策和自我反思能力的AI助手（修复版）
+增强智能体系统 - 具有自主决策和自我反思能力的AI助手
 
 本系统实现了一个真正由LLM驱动的智能体：
 1. LLM驱动的控制流：每一步的决策都由LLM做出
@@ -16,7 +16,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_community.chat_models import ChatOpenAI
 from langchain_core.tools import BaseTool
 from langchain_core.callbacks import CallbackManagerForToolRun
-from api_setting import API_KEY, API_URL, API_MODEL
+from .api_setting import API_KEY, API_URL, API_MODEL
 
 # ==================== 智能体状态定义 ====================
 class EnhancedAgentState:

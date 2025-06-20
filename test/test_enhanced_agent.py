@@ -7,7 +7,12 @@
 3. 动态计划调整
 """
 
-from enhanced_agents import run_enhanced_agent
+import sys
+import os
+# 添加项目根目录到Python路径
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from agent.enhanced_agents import run_enhanced_agent
 
 def test_simple_objective():
     """测试简单目标"""

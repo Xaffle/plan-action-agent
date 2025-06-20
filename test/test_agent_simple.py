@@ -13,9 +13,13 @@
 - 也需要执行能力（具体安排时间和内容）
 """
 
+import sys
 import os
-from agents import run_agent
-from api_setting import API_KEY
+# 添加项目根目录到Python路径
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+from agent.agents import run_agent
+from agent.api_setting import API_KEY
 
 # ==================== 测试任务定义 ====================
 # 选择一个适中复杂度的任务来测试智能体能力
