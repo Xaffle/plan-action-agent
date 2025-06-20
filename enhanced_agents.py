@@ -431,7 +431,8 @@ class EnhancedAgent:
                 "execution_process": execution_data.get("execution_process", ""),
                 "results": execution_data.get("results", ""),
                 "challenges": execution_data.get("challenges", ""),
-                "quality_score": execution_data.get("quality_score", 0.5),                "recommendations": execution_data.get("recommendations", "")
+                "quality_score": execution_data.get("quality_score", 0.5),
+                "recommendations": execution_data.get("recommendations", "")
             }
             
             state.completed_tasks.append(task_result)
